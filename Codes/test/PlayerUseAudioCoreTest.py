@@ -2,7 +2,7 @@
 
 from PySide6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QApplication, QSlider, QPushButton, QFileDialog, QHBoxLayout
 from PySide6.QtCore import Qt, QTimer
-from core.AudioCore import AudioPlayer
+from program.core.AudioCore import AudioPlayer
 import sys
 import os
 
