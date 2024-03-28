@@ -49,7 +49,6 @@ class AudioPlayer:
         return self.mediaplayer.get_position() * 1000
 
     def is_playing(self):
-        # 使用VLC的is_playing方法来检查音频是否正在播放
         return self.mediaplayer.is_playing()
 
     def update_ui(self):

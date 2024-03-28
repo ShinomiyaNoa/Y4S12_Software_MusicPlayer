@@ -16,11 +16,8 @@ def get_feature(mPath):
                 mPath, filename))
 
             # 提取频谱特征
-            spectral_centroids = librosa.feature.spectral_centroid(y=y, sr=sr)
             spectral_bandwidth = librosa.feature.spectral_bandwidth(y=y, sr=sr)
             spectral_contrast = librosa.feature.spectral_contrast(y=y, sr=sr)
-            spectral_rolloff = librosa.feature.spectral_rolloff(y=y, sr=sr)
-            spectral_flatness = librosa.feature.spectral_flatness(y=y)
 
             # 提取BPM
             tempo, _ = librosa.beat.beat_track(y=y, sr=sr)
@@ -28,11 +25,8 @@ def get_feature(mPath):
             # 将特征添加到DataFrame中
             data = pd.concat([data, pd.DataFrame({
                 'filename': [filename],
-                'spectral_centroids': [spectral_centroids.mean()],
                 'spectral_bandwidth': [spectral_bandwidth.mean()],
                 'spectral_contrast': [spectral_contrast.mean()],
-                'spectral_rolloff': [spectral_rolloff.mean()],
-                'spectral_flatness': [spectral_flatness.mean()],
                 'bpm': [tempo]
             })], ignore_index=True)
 
