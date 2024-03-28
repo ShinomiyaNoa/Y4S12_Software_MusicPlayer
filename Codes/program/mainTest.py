@@ -43,7 +43,7 @@ class MainWindow(QMainWindow):
         self.timer.timeout.connect(self.update_progress)
         self.timer.start()
 
-    # region_interface
+# region Interface creation
     def create_control_buttons(self):
         self.play_button = QPushButton("Play", self)
         self.play_button.clicked.connect(self.toggle_play_pause)
@@ -89,8 +89,9 @@ class MainWindow(QMainWindow):
         with open(qss_path, 'r', encoding='utf-8') as f:
             qss = f.read()
         self.setStyleSheet(qss)
-    # endregion
+# endregion
 
+# region Interface refresh
     def closeEvent(self, event):
         if self.audio_player.is_playing():
             self.audio_player.play_pause()
@@ -110,7 +111,9 @@ class MainWindow(QMainWindow):
     def update_progress(self):
         position = self.audio_player.get_position()
         self.positionslider.setValue(position)
+# endregion
 
+# region Aduio playback
     def play_audio(self, item):
         file_name = item.text()
         # 读取JSON文件获取歌曲地址
@@ -136,7 +139,9 @@ class MainWindow(QMainWindow):
         else:
             self.audio_player.play_pause()
             self.play_button.setText("Pause")
+# endregion
 
+# region Playlists
     def load_last_opened_playlist(self):
         playlists_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'playlists')
         last_opened_playlist_path = os.path.join(playlists_dir, "lastOpenedPlaylist.txt")
@@ -233,12 +238,14 @@ class MainWindow(QMainWindow):
              "path": file_path,
              "bpm":"",
              "spectral_bandwidth":"",
-             "spectral_contrast":""}
+             "spectral_contrast":"",
+             "wave_20per_to_30per":""}
             )
         with open(playlist_json_path, 'w', encoding='utf-8') as f:
             json.dump(playlist_info, f, ensure_ascii=False, indent=4)
         # 更新UI以反映新添加的文件
         self.playlist_widget.addItem(file_name)
+# endregion
 
 def main():
     app = QApplication([])
