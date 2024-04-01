@@ -1,0 +1,1 @@
+安装Pyside6的同时，会自动添加Shiboken，但Python的版本满足Pyside6时，不一定满足Shiboken的版本要求
