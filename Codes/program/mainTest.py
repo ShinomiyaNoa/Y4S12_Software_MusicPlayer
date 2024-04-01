@@ -11,6 +11,7 @@ class MainWindow(QMainWindow):
 
     def __init__(self, master=None):
         super().__init__(master)
+        self.baseDir = os.path.dirname(os.path.abspath(__file__))
         self.setWindowTitle("Audio Player")
 
         self.current_playlist_filename = ""
@@ -85,7 +86,7 @@ class MainWindow(QMainWindow):
         self.add_files_button.clicked.connect(self.select_file)
 
     def load_qss(self):
-        qss_path = os.path.join(os.path.dirname(__file__), 'style.qss')
+        qss_path = os.path.join(self.baseDir, 'style.qss')
         with open(qss_path, 'r', encoding='utf-8') as f:
             qss = f.read()
         self.setStyleSheet(qss)
@@ -96,7 +97,7 @@ class MainWindow(QMainWindow):
         if self.audio_player.is_playing():
             self.audio_player.play_pause()
         # 保存当前打开的播放列表的文件名
-        playlists_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'playlists')
+        playlists_dir = os.path.join(self.baseDir, 'playlists')
         last_opened_playlist_path = os.path.join(playlists_dir, "lastOpenedPlaylist.txt")
         with open(last_opened_playlist_path, 'w', encoding='utf-8') as f:
             f.write(self.current_playlist_filename)
@@ -117,7 +118,7 @@ class MainWindow(QMainWindow):
     def play_audio(self, item):
         file_name = item.text()
         # 读取JSON文件获取歌曲地址
-        playlists_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'playlists')
+        playlists_dir = os.path.join(self.baseDir, 'playlists')
         playlist_json_path = os.path.join(playlists_dir, "playList.json")
         with open(playlist_json_path, 'r', encoding='utf-8') as f:
             playlist_info = json.load(f)
@@ -143,7 +144,7 @@ class MainWindow(QMainWindow):
 
 # region Playlists
     def load_last_opened_playlist(self):
-        playlists_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'playlists')
+        playlists_dir = os.path.join(self.baseDir, 'playlists')
         last_opened_playlist_path = os.path.join(playlists_dir, "lastOpenedPlaylist.txt")
         if os.path.exists(last_opened_playlist_path):
             with open(last_opened_playlist_path, 'r', encoding='utf-8') as f:
@@ -152,7 +153,7 @@ class MainWindow(QMainWindow):
             self.load_playlist(last_opened_playlist_filename)
 
     def load_existing_playlists(self):
-        playlists_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'playlists')
+        playlists_dir = os.path.join(self.baseDir, 'playlists')
         playlist_files = [f for f in os.listdir(playlists_dir) if f.endswith('.json')]
         self.playlist_selector.clear()
         self.playlist_selector.addItems(playlist_files)
@@ -165,13 +166,13 @@ class MainWindow(QMainWindow):
             self.current_playlist_filename = playlist_name
 
     def update_playlist_selector(self):
-        playlists_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'playlists')
+        playlists_dir = os.path.join(self.baseDir, 'playlists')
         playlist_files = [f for f in os.listdir(playlists_dir) if f.endswith('.json')]
         self.playlist_selector.clear()
         self.playlist_selector.addItems(playlist_files)
 
     def load_playlist(self, filename):
-        playlists_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'playlists')
+        playlists_dir = os.path.join(self.baseDir, 'playlists')
         playlist_json_path = os.path.join(playlists_dir, filename)
         if os.path.exists(playlist_json_path):
             with open(playlist_json_path, 'r', encoding='utf-8') as f:
@@ -183,7 +184,7 @@ class MainWindow(QMainWindow):
             print(f"Playlist file {filename} not found.")
 
     def save_playlist(self, filename, playlist_info):
-        playlists_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'playlists')
+        playlists_dir = os.path.join(self.baseDir, 'playlists')
         playlist_json_path = os.path.join(playlists_dir, filename)
         with open(playlist_json_path, 'w', encoding='utf-8') as f:
             json.dump(playlist_info, f, ensure_ascii=False, indent=4)
@@ -219,7 +220,7 @@ class MainWindow(QMainWindow):
                 playlist_info.append(song_info)
 
         # 将播放列表内容保存到JSON文件
-        playlists_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'playlists')
+        playlists_dir = os.path.join(self.baseDir, 'playlists')
         # 检查文件名是否已经包含了.json扩展名，如果没有，则添加
         if not self.current_playlist_filename.endswith('.json'):
             self.current_playlist_filename += '.json'
@@ -229,7 +230,7 @@ class MainWindow(QMainWindow):
 
     def add_to_playlist(self, file_path, file_name):
         # 将文件添加到播放列表中
-        playlists_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'playlists')
+        playlists_dir = os.path.join(self.baseDir, 'playlists')
         playlist_json_path = os.path.join(playlists_dir, "playList.json")
         with open(playlist_json_path, 'r', encoding='utf-8') as f:
             playlist_info = json.load(f)
