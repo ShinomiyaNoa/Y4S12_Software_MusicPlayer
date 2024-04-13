@@ -1,6 +1,5 @@
 import librosa
 import numpy as np
-import scipy.stats
 
 class WaveAnalyzer:
     def __init__(self, filename):
@@ -28,7 +27,7 @@ class WaveAnalyzer:
     def entropy(self):
         # 计算熵
         log_S_normalized = self.log_S / np.sum(self.log_S)
-        # 添加一个非常小的常数到每个概率值中，以避免零概率的情况
+        # 添加一个非常小的常数到每个概率值中，避免零概率的情况
         epsilon = 1e-10
         log_S_normalized_smoothed = (log_S_normalized + epsilon) / (np.sum(log_S_normalized) + epsilon * log_S_normalized.shape[0])
         entropy = -np.sum(log_S_normalized_smoothed * np.log2(log_S_normalized_smoothed))
