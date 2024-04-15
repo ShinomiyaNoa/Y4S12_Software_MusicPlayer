@@ -40,7 +40,7 @@ def get_feature(mPath):
             processed_files += 1
             print(f"Processed {processed_files} out of {total_files} files.")
 
-    data.to_csv('logs/datasetsInformation.csv', index=False)
+    data.to_csv('logs/datasetsInformation_1_entropy.csv', index=False)
     return data
 
 if __name__ == "__main__":

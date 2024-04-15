@@ -31,7 +31,7 @@ class WaveAnalyzer:
         epsilon = 1e-10
         log_S_normalized_smoothed = (log_S_normalized + epsilon) / (np.sum(log_S_normalized) + epsilon * log_S_normalized.shape[0])
         entropy = -np.sum(log_S_normalized_smoothed * np.log2(log_S_normalized_smoothed))
-        return entropy
+        return 1/entropy
 
     def std_dev(self):
         # 计算标准差
