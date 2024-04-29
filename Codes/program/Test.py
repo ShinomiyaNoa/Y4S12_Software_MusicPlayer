@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QInputDialog, QListWidget, QMainWindow, QWidget
 from PySide6.QtWidgets import QApplication, QSlider, QPushButton
-from PySide6.QtWidgets import QFileDialog, QHBoxLayout
+from PySide6.QtWidgets import QFileDialog, QHBoxLayout, QMessageBox
 from PySide6.QtCore import Qt, QTimer
 from core.AudioCore import AudioPlayer
 import sys
@@ -10,7 +10,7 @@ import os
 class MainWindow(QMainWindow):
 
     def __init__(self, master=None):
-        super().__init__(master)
+        super().__init__(flags=Qt.FramelessWindowHint)
         self.baseDir = os.path.dirname(os.path.abspath(__file__))
         self.setWindowTitle("Audio Player")
 
@@ -33,9 +33,11 @@ class MainWindow(QMainWindow):
         self.create_control_buttons()
         self.create_volume_slider()
         self.create_position_slider()
+        self.create_add_playlist_button()
         self.create_playlist_widget()
         self.create_playlist_selector()
-        self.create_add_files_button()
+        self.create_add_file_button()
+        self.create_add_folder_button()
 
         self.widget.setLayout(self.hbuttonbox)
 
@@ -70,6 +72,11 @@ class MainWindow(QMainWindow):
         self.positionslider.sliderMoved.connect(self.audio_player.set_position)
         self.hbuttonbox.addWidget(self.positionslider)
 
+    def create_add_playlist_button(self):
+        self.add_playlist_button = QPushButton("Add Playlist", self)
+        self.add_playlist_button.clicked.connect(self.add_new_playlist)
+        self.hbuttonbox.addWidget(self.add_playlist_button)
+
     def create_playlist_widget(self):
         self.playlist_widget = QListWidget(self)
         self.hbuttonbox.addWidget(self.playlist_widget)
@@ -80,10 +87,15 @@ class MainWindow(QMainWindow):
         self.hbuttonbox.addWidget(self.playlist_selector)
         self.playlist_selector.itemDoubleClicked.connect(self.load_selected_playlist)
 
-    def create_add_files_button(self):
-        self.add_files_button = QPushButton("Add Files")
+    def create_add_file_button(self):
+        self.add_files_button = QPushButton("Add File")
         self.hbuttonbox.addWidget(self.add_files_button)
         self.add_files_button.clicked.connect(self.select_file)
+
+    def create_add_folder_button(self):
+        self.add_files_button = QPushButton("Add Folder")
+        self.hbuttonbox.addWidget(self.add_files_button)
+        self.add_files_button.clicked.connect(self.select_folder)
 
     def load_qss(self):
         qss_path = os.path.join(self.baseDir, 'style.qss')
@@ -246,8 +258,29 @@ class MainWindow(QMainWindow):
             json.dump(playlist_info, f, ensure_ascii=False, indent=4)
         # 更新UI以反映新添加的文件
         self.playlist_widget.addItem(file_name)
+
+    def add_new_playlist(self):
+        # 弹出对话框让用户输入新播放列表的文件名
+        playlist_name, ok = QInputDialog.getText(self, "Add Playlist", "Enter playlist name:")
+        if ok and playlist_name:
+            # 确保文件名有 .json 扩展名
+            if not playlist_name.endswith('.json'):
+                playlist_name += '.json'
+            
+            # 创建新的空白 JSON 文件
+            playlists_dir = os.path.join(self.baseDir, 'playlists')
+            playlist_json_path = os.path.join(playlists_dir, playlist_name)
+            try:
+                with open(playlist_json_path, 'w', encoding='utf-8') as f:
+                    json.dump([], f, ensure_ascii=False, indent=4)
+                # 更新播放列表选择器
+                self.update_playlist_selector()
+                QMessageBox.information(self, "Success", f"Playlist '{playlist_name}' added successfully.")
+            except Exception as e:
+                QMessageBox.critical(self, "Error", f"Failed to add playlist: {e}")
 # endregion
 
+# region Main
 def main():
     app = QApplication([])
     window = MainWindow()
@@ -256,3 +289,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+# endregion
