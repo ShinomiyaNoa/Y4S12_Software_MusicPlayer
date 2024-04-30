@@ -1,0 +1,16 @@
+MainWindow {
+  width: auto;
+  border: none;
+}
+
+TitleBar {
+  height: 30px;
+  width: 100%;
+}
+
+MusicPlayer {
+  background-color: #e6e6e6;
+  height: 100%-30px;
+  width: 100%;
+}
+

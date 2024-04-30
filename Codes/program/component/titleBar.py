@@ -60,9 +60,9 @@ class TitleBar(QWidget):
             self.setStyleSheet(f.read())
 
     def toggleMaximize(self):
-        if self.parent().isMaximized():
-            self.parent().showNormal()
+        if self.mainWindow.isMaximized():
+            self.mainWindow.showNormal()
             self.maximizeButton.setIcon(QIcon("path/to/maximize_icon.png"))
         else:
-            self.parent().showMaximized()
+            self.mainWindow.showMaximized()
             self.maximizeButton.setIcon(QIcon("path/to/restore_icon.png"))

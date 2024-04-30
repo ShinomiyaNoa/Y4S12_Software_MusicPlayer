@@ -3,13 +3,12 @@ from PySide6.QtCore import Qt
 from component.titleBar import TitleBar
 from component.musicPlayer import MusicPlayer
 import sys
-import json
 import os
 
 class MainWindow(QMainWindow):
     def __init__(self, master=None):
         super().__init__(flags=Qt.FramelessWindowHint)
-        self.setGeometry(0, 0, 1200, 700)
+        self.setGeometry(0, 0, 1000, 700)
         self.baseDir = os.path.dirname(os.path.abspath(__file__))
 
         # 创建主窗口布局
@@ -28,7 +27,11 @@ class MainWindow(QMainWindow):
         self.musicPlayer = MusicPlayer(self, self)
         layout.addWidget(self.musicPlayer)
 
-        
+        layout.setStretchFactor(self.musicPlayer, 1)
+
+        # 在 MainWindow 类的 __init__ 方法中添加以下代码
+        with open(os.path.join(self.baseDir, 'main.qss'), "r") as f:
+            self.setStyleSheet(f.read())
 
 def main():
     app = QApplication([])

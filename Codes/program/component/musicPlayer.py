@@ -1,8 +1,9 @@
 from PySide6.QtWidgets import QInputDialog, QListWidget, QMainWindow, QWidget
 from PySide6.QtWidgets import QApplication, QSlider, QPushButton
-from PySide6.QtWidgets import QFileDialog, QHBoxLayout, QMessageBox
+from PySide6.QtWidgets import QFileDialog, QHBoxLayout, QMessageBox, QVBoxLayout
 from PySide6.QtCore import Qt, QTimer
 from core.AudioCore import AudioPlayer
+import threading
 import sys
 import json
 import os
@@ -12,6 +13,7 @@ class MusicPlayer(QWidget):
         super().__init__(parent)
         self.mainWindow = mainWindow
         self.current_playlist_filename = ""
+        self.setAutoFillBackground(True)
 
         # 加载 QSS 文件
         self.load_qss("component\\qss\\musicPlayer.qss")
@@ -24,19 +26,29 @@ class MusicPlayer(QWidget):
         self.load_last_opened_playlist()
 
     def create_ui(self):
-        self.widget = QWidget(self)
+        self.widget = QVBoxLayout(self)
 
-        self.hbuttonbox = QHBoxLayout()
+        self.main_box = QVBoxLayout()
+
+        self.headline_box = QHBoxLayout()
+        self.create_add_file_button()
+        self.create_add_folder_button()
+        self.create_add_playlist_button()
+        
+        self.playlist_box = QHBoxLayout()
+        self.create_playlist_widget()
+        self.create_playlist_selector()
+
+        self.control_box = QHBoxLayout()
         self.create_control_buttons()
         self.create_volume_slider()
         self.create_position_slider()
-        self.create_add_playlist_button()
-        self.create_playlist_widget()
-        self.create_playlist_selector()
-        self.create_add_file_button()
-        self.create_add_folder_button()
 
-        self.widget.setLayout(self.hbuttonbox)
+        self.main_box.addLayout(self.headline_box)
+        self.main_box.addLayout(self.playlist_box)
+        self.main_box.addLayout(self.control_box)
+
+        self.widget.addLayout(self.main_box)
 
         self.timer = QTimer(self)
         self.timer.setInterval(100)
@@ -47,18 +59,18 @@ class MusicPlayer(QWidget):
     def create_control_buttons(self):
         self.play_button = QPushButton("Play", self)
         self.play_button.clicked.connect(self.toggle_play_pause)
-        self.hbuttonbox.addWidget(self.play_button)
+        self.control_box.addWidget(self.play_button)
         self.stopbutton = QPushButton("Stop")
-        self.hbuttonbox.addWidget(self.stopbutton)
+        self.control_box.addWidget(self.stopbutton)
         self.stopbutton.clicked.connect(self.audio_player.stop)
 
     def create_volume_slider(self):
-        self.hbuttonbox.addStretch(1)
+        self.control_box.addStretch(1)
         self.volumeslider = QSlider(Qt.Orientation.Horizontal, self)
         self.volumeslider.setMaximum(100)
         self.volumeslider.setValue(self.audio_player.get_volume())
         self.volumeslider.setToolTip("Volume")
-        self.hbuttonbox.addWidget(self.volumeslider)
+        self.control_box.addWidget(self.volumeslider)
         self.volumeslider.valueChanged.connect(self.audio_player.set_volume)
 
     def create_position_slider(self):
@@ -67,31 +79,32 @@ class MusicPlayer(QWidget):
         self.positionslider.setMaximum(1000)
         self.positionslider.setValue(self.audio_player.get_position())
         self.positionslider.sliderMoved.connect(self.audio_player.set_position)
-        self.hbuttonbox.addWidget(self.positionslider)
+        self.control_box.addWidget(self.positionslider)
 
     def create_add_playlist_button(self):
-        self.add_playlist_button = QPushButton("Add Playlist", self)
+        self.add_playlist_button = QPushButton("New Playlist", self)
         self.add_playlist_button.clicked.connect(self.add_new_playlist)
-        self.hbuttonbox.addWidget(self.add_playlist_button)
+        self.headline_box.addWidget(self.add_playlist_button)
+        self.headline_box.addStretch(1)
 
     def create_playlist_widget(self):
         self.playlist_widget = QListWidget(self)
-        self.hbuttonbox.addWidget(self.playlist_widget)
+        self.playlist_box.addWidget(self.playlist_widget)
         self.playlist_widget.itemDoubleClicked.connect(self.play_audio)
 
     def create_playlist_selector(self):
         self.playlist_selector = QListWidget(self)
-        self.hbuttonbox.addWidget(self.playlist_selector)
+        self.playlist_box.addWidget(self.playlist_selector)
         self.playlist_selector.itemDoubleClicked.connect(self.load_selected_playlist)
 
     def create_add_file_button(self):
         self.add_files_button = QPushButton("Add File")
-        self.hbuttonbox.addWidget(self.add_files_button)
+        self.headline_box.addWidget(self.add_files_button)
         self.add_files_button.clicked.connect(self.select_file)
 
     def create_add_folder_button(self):
         self.add_files_button = QPushButton("Add Folder")
-        self.hbuttonbox.addWidget(self.add_files_button)
+        self.headline_box.addWidget(self.add_files_button)
         self.add_files_button.clicked.connect(self.select_folder)
 
     def load_qss(self, qss_file):
@@ -198,16 +211,23 @@ class MusicPlayer(QWidget):
             json.dump(playlist_info, f, ensure_ascii=False, indent=4)
 
     def select_folder(self):
+        # 开多线程
         folder_path = QFileDialog.getExistingDirectory(self, "Select Folder")
         if folder_path:
-            # 遍历文件夹中的所有文件，并添加到播放列表中
-            for root, dirs, files in os.walk(folder_path):
-                for file in files:
-                    if file.endswith(('.mp3', '.wav', '.flac')): # 根据需要添加更多文件类型
-                        file_path = os.path.join(root, file)
-                        self.add_to_playlist(file_path, file)
-            # 保存当前播放列表到JSON文件
-            self.save_current_playlist_to_json()
+            threading.Thread(target=self.process_folder, args=(folder_path,)).start()
+
+    def process_folder(self, folder_path):
+        # 遍历文件夹中的所有文件，并添加到播放列表中
+        total_files = sum([len(files) for _, _, files in os.walk(folder_path)])
+        processed_files = 0
+        for root, dirs, files in os.walk(folder_path):
+            for file in files:
+                if file.endswith(('.mp3', '.wav', '.flac')): # 根据需要添加更多文件类型
+                    file_path = os.path.join(root, file)
+                    self.add_to_playlist(file_path, file)
+                    processed_files += 1
+                    print(f"Processed {processed_files} of {total_files} files.")
+        print("Folder processing completed.")
 
     def select_file(self):
         file_paths, _ = QFileDialog.getOpenFileNames(self, "Select Files", "", "Audio Files (*.mp3 *.wav *.flac)")
@@ -215,31 +235,11 @@ class MusicPlayer(QWidget):
             for file_path in file_paths:
                 file_name = os.path.basename(file_path)
                 self.add_to_playlist(file_path, file_name)
-            # 保存当前播放列表到JSON文件
-            self.save_current_playlist_to_json()
-
-    def save_current_playlist_to_json(self):
-        # 获取当前播放列表的内容
-        playlist_info = []
-        for i in range(self.playlist_widget.count()):
-            item = self.playlist_widget.item(i)
-            if item:
-                song_info = {"name": item.text(), "path": item.data(Qt.UserRole)}
-                playlist_info.append(song_info)
-
-        # 将播放列表内容保存到JSON文件
-        playlists_dir = os.path.join(self.mainWindow.baseDir, 'playlists')
-        # 检查文件名是否已经包含了.json扩展名，如果没有，则添加
-        if not self.current_playlist_filename.endswith('.json'):
-            self.current_playlist_filename += '.json'
-        current_playlist_json_path = os.path.join(playlists_dir, self.current_playlist_filename)
-        with open(current_playlist_json_path, 'w', encoding='utf-8') as f:
-            json.dump(playlist_info, f, ensure_ascii=False, indent=4)
 
     def add_to_playlist(self, file_path, file_name):
         # 将文件添加到播放列表中
         playlists_dir = os.path.join(self.mainWindow.baseDir, 'playlists')
-        playlist_json_path = os.path.join(playlists_dir, "playList.json")
+        playlist_json_path = os.path.join(playlists_dir, self.current_playlist_filename)
         with open(playlist_json_path, 'r', encoding='utf-8') as f:
             playlist_info = json.load(f)
         playlist_info.append(
@@ -248,7 +248,7 @@ class MusicPlayer(QWidget):
              "bpm":"",
              "spectral_bandwidth":"",
              "spectral_contrast":"",
-             "wave_20per_to_30per":""}
+             "wave":""}
             )
         with open(playlist_json_path, 'w', encoding='utf-8') as f:
             json.dump(playlist_info, f, ensure_ascii=False, indent=4)
@@ -271,6 +271,7 @@ class MusicPlayer(QWidget):
                     json.dump([], f, ensure_ascii=False, indent=4)
                 # 更新播放列表选择器
                 self.update_playlist_selector()
+                self.load_playlist(playlist_name)
                 QMessageBox.information(self, "Success", f"Playlist '{playlist_name}' added successfully.")
             except Exception as e:
                 QMessageBox.critical(self, "Error", f"Failed to add playlist: {e}")
