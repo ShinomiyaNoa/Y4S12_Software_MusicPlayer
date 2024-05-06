@@ -1,0 +1,7 @@
+QListWidget#playlist_selector {
+    
+}
+
+QListWidget#playlist_widget{
+    
+}
