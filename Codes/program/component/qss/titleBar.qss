@@ -17,14 +17,42 @@ TitleBar QPushButton {
   float: right;
 }
 
-TitleBar QPushButton#minimizeButton {
-  image: url(path/to/minimize_icon.png);
+/* TitleBar QPushButton#minimizeButton { */
+  /* image: url(path/to/minimize_icon.png); */
+/* } */
+
+/* TitleBar QPushButton#maximizeButton { */
+  /* image: url(path/to/maximize_icon.png); */
+/* } */
+
+/* TitleBar QPushButton#closeButton { */
+  /* image: url(path/to/close_icon.png); */
+/* } */
+
+TitleBar QPushButton#closeButton:hover {
+  background-color: #FF4500;
 }
 
-TitleBar QPushButton#maximizeButton {
-  image: url(path/to/maximize_icon.png);
+TitleBar QPushButton#closeButton:pressed {
+  background-color: #FF6347;
 }
 
-TitleBar QPushButton#closeButton {
-  image: url(path/to/close_icon.png);
+TitleBar {
+  border-bottom: 1px solid #4A4A4D;
+}
+
+TitleBar QLabel {
+  font-weight: bold;
+}
+
+TitleBar QPushButton {
+  border: 1px solid #666666;
+}
+
+TitleBar QPushButton:hover {
+  border-color: #FFFFFF;
+}
+
+TitleBar QPushButton:pressed {
+  border-color: #FFFFFF;
 }

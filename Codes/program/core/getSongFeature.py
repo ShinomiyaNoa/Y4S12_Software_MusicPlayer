@@ -1,6 +1,7 @@
 import os
 import librosa
 import pandas as pd
+import numpy as np
 from core.waveAnalyzer import WaveAnalyzer
 
 def get_song_features(file_path):
@@ -15,10 +16,13 @@ def get_song_features(file_path):
     wav_entropy = wave_analyzer.entropy()
     wav_std_dev = wave_analyzer.std_dev()
 
+    loudness_frames = librosa.feature.rms(y=y)
+
     return {
         'spectral_bandwidth': spectral_bandwidth.mean(),
         'spectral_contrast': spectral_contrast.mean(),
         'bpm': tempo,
         'wav_entropy': wav_entropy,
-        'wav_std_dev': wav_std_dev
+        'wav_std_dev': wav_std_dev,
+        'loudness': np.max(loudness_frames)
     }

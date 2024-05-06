@@ -1,0 +1,145 @@
+QWidget {
+    background-color: #ffffff;
+    color: #ffffff;
+}
+
+QPushButton {
+    background-color: #ffffff;
+    border: none;
+    color: #000000;
+    padding: 10px;
+    min-width: 80px;
+}
+
+QPushButton:hover {
+    background-color: #ffffff;
+}
+
+QPushButton:pressed {
+    background-color: #ffffff;
+}
+
+QSlider {
+    background-color: #ffffff;
+}
+
+QSlider::groove {
+    background-color: #ffffff;
+}
+
+QSlider::handle {
+    background-color: #666666;
+    border: none;
+    border-radius: 0px;
+    width: 10px;
+    height: 20px;
+}
+
+QListView {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+QListView::item {
+    padding: 5px;
+}
+
+QListView::item:selected {
+    background-color: #ffffff;
+}
+
+QLineEdit {
+    background-color: #ffffff;
+    color: white;
+    border: none;
+}
+
+QSplitter::handle {
+    background-color: #ffffff;
+}
+
+QScrollBar {
+    background-color: #ffffff;
+}
+
+QScrollBar::handle {
+    background-color: #ffffff;
+}
+
+QScrollBar::add-line, QScrollBar::sub-line {
+    background-color: #ffffff;
+}
+
+QScrollBar::add-page, QScrollBar::sub-page {
+    background-color: #ffffff;
+}
+
+QPushButton#add_playlist_button{
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    padding: 10px;
+}
+
+QPushButton#add_files_button{
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    padding: 10px;
+}
+
+QPushButton#add_folder_button{
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    padding: 10px;
+}
+
+QPushButton#play_button{
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    padding: 10px;
+}
+
+QPushButton#play_button:checked{
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    padding: 10px;
+}
+
+QPushButton#previous_button{
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    padding: 10px;
+}
+
+QPushButton#next_button{
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    padding: 10px;
+}
+
+QPushButton#stopbutton{
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    padding: 10px;
+}
+
+QPushButton#playback_mode_button{
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    padding: 10px;
+}
+
+QPushButton#playback_mode_button:checked{
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    padding: 10px;
+}

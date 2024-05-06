@@ -1,10 +1,12 @@
 import vlc
-
+import numpy as np
+import math
 class AudioPlayer:
 
-    def __init__(self):
+    def __init__(self, musicPlayer):
         # Create a basic vlc instance
         self.instance = vlc.Instance()
+        self.musicPlayer = musicPlayer
 
         self.media = None
 
@@ -12,6 +14,9 @@ class AudioPlayer:
         self.mediaplayer = self.instance.media_player_new()
 
         self.is_paused = False
+
+        self.target_loudness = -12
+        self.volume_adjustment = 1
 
     def play_pause(self):
         if self.mediaplayer.is_playing():
@@ -27,16 +32,33 @@ class AudioPlayer:
     def stop(self):
         self.mediaplayer.stop()
 
-    def open_file(self, filename):
+    def open_file(self, filename, loudness):
         self.media = self.instance.media_new(filename)
         self.mediaplayer.set_media(self.media)
 
         self.media.parse()
-
+        if loudness is not None:
+            # 统一响度到 self.target_loudness
+            self.volume_adjustment = self.calculate_volume_adjustment(loudness, self.target_loudness)
+            self.set_volume(self.musicPlayer.volumeslider.value())
         self.play_pause()
 
+    def calculate_volume_adjustment(self, current_loudness, target_loudness):
+        """
+        计算响度调整因子。
+        
+        :param current_loudness: 当前音频的响度
+        :param target_loudness: 目标响度
+        :return: 响度调整因子
+        """
+        rms_db = 20*np.log10(current_loudness)
+        adjustment_factor = np.power(10, (target_loudness - rms_db) / 20)
+        return adjustment_factor
+
     def set_volume(self, volume):
-        self.mediaplayer.audio_set_volume(volume)
+        target_volume = volume * self.volume_adjustment
+        self.mediaplayer.audio_set_volume(int(target_volume))
+        print(target_volume)
 
     def set_position(self, position):
         pos = position / 1000.0

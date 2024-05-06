@@ -1,13 +1,15 @@
 from PySide6.QtWidgets import QInputDialog, QListWidget, QMainWindow, QWidget
 from PySide6.QtWidgets import QApplication, QSlider, QPushButton, QRadioButton
 from PySide6.QtWidgets import QFileDialog, QHBoxLayout, QMessageBox, QVBoxLayout
-from PySide6.QtWidgets import QButtonGroup, QSplitter
+from PySide6.QtWidgets import QButtonGroup, QSplitter, QMenu, QLabel
 from PySide6.QtCore import Qt, QTimer
 from core.AudioCore import AudioPlayer
 from core.getSongFeature import get_song_features
 from core.cosineSimilarity import calculate_weighted_cosine_similarity
 import pandas as pd
+import numpy as np
 import threading
+import librosa
 import sys
 import json
 import os
@@ -17,9 +19,11 @@ class MusicPlayer(QWidget):
     def __init__(self, parent=None, mainWindow=None):
         super().__init__(parent)
         self.mainWindow = mainWindow
+        
         self.current_playlist_filename = ""
         self.playback_mode = 'sequential'
         self.last_five_tracks = []
+
         self.ranges = {
             'spectral_bandwidth': (900,3100),
             'spectral_contrast': (18.5,27.5),
@@ -32,12 +36,17 @@ class MusicPlayer(QWidget):
         # 加载 QSS 文件
         self.load_qss("component\\qss\\musicPlayer.qss")
 
-        self.audio_player = AudioPlayer()
+        self.audio_player = AudioPlayer(self)
         self.create_ui()
 
         # 加载播放列表
         self.load_existing_playlists()
         self.load_last_opened_playlist()
+
+        # 播放次数计时器
+        self.play_count_timer = QTimer(self)
+        self.play_count_timer.setInterval(10000)
+        self.play_count_timer.timeout.connect(self.update_play_count)
 
         # 在播放器打开时扫描并更新 cosine similarity list
         threading.Thread(target=self.scan_and_update_cosine_similarity_list).start()
@@ -51,6 +60,7 @@ class MusicPlayer(QWidget):
         self.create_add_file_button()
         self.create_add_folder_button()
         self.create_add_playlist_button()
+        self.create_style_switch_button()
 
         self.splitter = QSplitter(Qt.Horizontal)
         self.playlist_box = QHBoxLayout()
@@ -78,13 +88,19 @@ class MusicPlayer(QWidget):
         self.timer.start()
 
 # region Interface creation
+    def create_style_switch_button(self):
+        self.style_switch_button = QPushButton("Switch Style", self)
+        self.style_switch_button.clicked.connect(self.switch_style)
+        self.headline_box.addWidget(self.style_switch_button) 
+
     def create_control_buttons(self):
         self.play_button = QPushButton("Play", self)
         self.play_button.clicked.connect(self.toggle_play_pause)
         self.control_box.addWidget(self.play_button)
-        self.stopbutton = QPushButton("Stop")
-        self.control_box.addWidget(self.stopbutton)
-        self.stopbutton.clicked.connect(self.audio_player.stop)
+
+        self.stop_button = QPushButton("Stop")
+        self.control_box.addWidget(self.stop_button)
+        self.stop_button.clicked.connect(self.audio_player.stop)
 
     def create_playback_control_buttons(self):
         self.previous_button = QPushButton("Previous", self)
@@ -122,15 +138,23 @@ class MusicPlayer(QWidget):
         self.headline_box.addWidget(self.add_playlist_button)
         self.headline_box.addStretch(1)
 
+    def create_equalizer_settings_button(self):
+        equalizerSettingsButton = QPushButton("Equalizer Settings", self)
+        equalizerSettingsButton.clicked.connect(self.open_equalizer_settings_dialog)
+
     def create_playlist_widget(self):
         self.playlist_widget = QListWidget(self)
         self.splitter.addWidget(self.playlist_widget)
         self.playlist_widget.itemDoubleClicked.connect(self.play_audio)
+        self.playlist_widget.setContextMenuPolicy(Qt.CustomContextMenu)
+        self.playlist_widget.customContextMenuRequested.connect(self.show_context_menu)
 
     def create_playlist_selector(self):
         self.playlist_selector = QListWidget(self)
         self.splitter.addWidget(self.playlist_selector)
         self.playlist_selector.itemDoubleClicked.connect(self.load_selected_playlist)
+        self.playlist_selector.setContextMenuPolicy(Qt.CustomContextMenu)
+        self.playlist_selector.customContextMenuRequested.connect(self.show_context_menu)
 
     def create_add_file_button(self):
         self.add_files_button = QPushButton("Add File")
@@ -138,9 +162,9 @@ class MusicPlayer(QWidget):
         self.add_files_button.clicked.connect(self.select_file)
 
     def create_add_folder_button(self):
-        self.add_files_button = QPushButton("Add Folder")
-        self.headline_box.addWidget(self.add_files_button)
-        self.add_files_button.clicked.connect(self.select_folder)
+        self.add_folder_button = QPushButton("Add Folder")
+        self.headline_box.addWidget(self.add_folder_button)
+        self.add_folder_button.clicked.connect(self.select_folder)
 
     def load_qss(self, qss_file):
         qss_path = os.path.join(self.mainWindow.baseDir, qss_file)
@@ -168,6 +192,45 @@ class MusicPlayer(QWidget):
     def update_progress(self):
         position = self.audio_player.get_position()
         self.positionslider.setValue(position)
+
+    def show_context_menu(self, position):
+        sender = self.sender()
+        item = sender.itemAt(position)
+        if item:
+            menu = QMenu()
+            # Directly add a menu item without using QAction
+            menu.addAction("Delete", lambda: self.delete_item(sender, item))
+            menu.exec(sender.mapToGlobal(position))
+
+    def switch_style(self):
+        styles = ["musicPlayer", "brown", "black", "green", "white"] # List of available styles
+        style, ok = QInputDialog.getItem(self, "Select Style", "Style:", styles, 0, False)
+        if ok and style:
+            qss_path = os.path.join(self.mainWindow.baseDir, f"component\\qss\\{style}.qss")
+            with open(qss_path, "r") as f:
+                self.setStyleSheet(f.read())
+
+    def open_equalizer_settings_dialog(self):
+        # 添加一个功能，打开均衡器设置对话框
+        equalizer_settings_dialog = QLabel(self)
+        equalizer_settings_dialog.setWindowTitle("Equalizer Settings")
+        equalizer_layout = QVBoxLayout()
+        equalizer_settings_dialog.setLayout(equalizer_layout)
+
+        equalizer_label = QLabel("Adjust Equalizer Settings:")
+        equalizer_layout.addWidget(equalizer_label)
+
+        equalizer_slider = QSlider(Qt.Horizontal)
+        equalizer_slider.setMinimum(-10)
+        equalizer_slider.setMaximum(10)
+        equalizer_slider.setValue(0)
+        equalizer_slider.setTickPosition(QSlider.TicksBelow)
+        equalizer_layout.addWidget(equalizer_slider)
+
+        save_button = QPushButton("Save")
+        equalizer_layout.addWidget(save_button)
+
+        equalizer_settings_dialog.exec()
 # endregion
 
 # region Aduio playback
@@ -185,9 +248,12 @@ class MusicPlayer(QWidget):
         else:
             print(f"Song {file_name} not found in playlist.")
             return
-        self.audio_player.open_file(file_path)
+        self.audio_player.open_file(file_path, song_info['loudness'])
         self.audio_player.play_pause()
         self.toggle_play_pause()
+
+        # 计时器在播放后开始准备计数
+        self.play_count_timer.start()
 
     def toggle_play_pause(self):
         if self.audio_player.is_playing():
@@ -240,6 +306,37 @@ class MusicPlayer(QWidget):
                         self.playlist_widget.setCurrentRow(i)
                         self.play_audio(self.playlist_widget.item(i))
                         break
+
+    def update_play_count(self):
+        # print(f"Play count: {self.play_count_timer.elapsed()}")
+        current_song_info = self.get_current_song_info()
+        if current_song_info:
+            current_song_info["play_count"] += 1
+            self.save_playlist(self.current_playlist_filename, self.get_playlist_info())
+
+    def get_current_song_info(self):
+        current_song_name = self.playlist_widget.currentItem().text()
+        playlists_dir = os.path.join(self.mainWindow.baseDir, 'playlists')
+        playlist_json_path = os.path.join(playlists_dir, self.current_playlist_filename)
+        with open(playlist_json_path, 'r', encoding='utf-8') as f:
+            playlist_info = json.load(f)
+        for song_info in playlist_info:
+            if song_info["name"] == current_song_name:
+                return song_info
+        return None
+
+    def get_playlist_info(self):
+        playlists_dir = os.path.join(self.mainWindow.baseDir, 'playlists')
+        playlist_json_path = os.path.join(playlists_dir, self.current_playlist_filename)
+        with open(playlist_json_path, 'r', encoding='utf-8') as f:
+            playlist_info = json.load(f)
+        return playlist_info
+
+    def save_playlist(self, filename, playlist_info):
+        playlists_dir = os.path.join(self.mainWindow.baseDir, 'playlists')
+        playlist_json_path = os.path.join(playlists_dir, filename)
+        with open(playlist_json_path, 'w', encoding='utf-8') as f:
+            json.dump(playlist_info, f, ensure_ascii=False, indent=4)
 # endregion
 
 # region Playlists
@@ -293,7 +390,8 @@ class MusicPlayer(QWidget):
         # 开多线程
         folder_path = QFileDialog.getExistingDirectory(self, "Select Folder")
         if folder_path:
-            threading.Thread(target=self.process_folder, args=(folder_path,)).start()
+            if not self.mainWindow.thread_stop_flag:
+                threading.Thread(target=self.process_folder, args=(folder_path,)).start()
 
     def process_folder(self, folder_path):
         # 遍历文件夹中的所有文件，并添加到播放列表中
@@ -309,6 +407,11 @@ class MusicPlayer(QWidget):
         print("Folder processing completed.")
 
         # 在选择文件夹后扫描并更新 cosine similarity list
+        playlists_dir = os.path.join(self.mainWindow.baseDir, 'playlists')
+        cosine_similarity_list_path = os.path.join(playlists_dir, 'cosineSlimilarityList.json')
+        with open(cosine_similarity_list_path, 'r', encoding='utf-8') as f:
+            cosine_similarity_list = json.load(f)
+
         threading.Thread(target=self.scan_and_update_cosine_similarity_list).start()
 
     def select_file(self):
@@ -338,7 +441,9 @@ class MusicPlayer(QWidget):
             "bpm": None,
             'wav_entropy': None,
             'wav_std_dev': None,
-            "weighted_cosine_similarity": None
+            "loudness": None,
+            "play_count": 0,
+            "weighted_cosine_similarity": None,
         })
 
         with open(playlist_json_path, 'w', encoding='utf-8') as f:
@@ -362,6 +467,8 @@ class MusicPlayer(QWidget):
             "bpm": None,
             'wav_entropy': None,
             'wav_std_dev': None,
+            "loudness": None,
+            "play_count": 0,
             "weighted_cosine_similarity": None
         })
 
@@ -375,24 +482,43 @@ class MusicPlayer(QWidget):
             cosine_similarity_list = json.load(f)
 
         updated_songs = []
-        for song in cosine_similarity_list:
-            if song["bpm"] is None or song["spectral_bandwidth"] is None or song["spectral_contrast"] is None or song["weighted_cosine_similarity"] is None:
-                print(f"Updating {song['name']}")
-                features = get_song_features(song["path"])
-                features_df = pd.DataFrame(features, index=[0])
-                # 更新歌曲信息
-                song["spectral_bandwidth"] = features['spectral_bandwidth']
-                song["spectral_contrast"] = features['spectral_contrast']
-                song["bpm"] = features['bpm']
-                # 计算加权余弦相似度
-                song["wav_entropy"] = features['wav_entropy']
-                song["wav_std_dev"] = float(features['wav_std_dev'])
-                song["weighted_cosine_similarity"] = calculate_weighted_cosine_similarity(features_df, self.ranges)
-                updated_songs.append(song)
 
-                with open(cosine_similarity_list_path, 'w', encoding='utf-8') as f:
-                    json.dump(cosine_similarity_list, f, ensure_ascii=False, indent=4)
-                self.sort_cosine_similarity_list(cosine_similarity_list_path)
+        for song in cosine_similarity_list:
+            if self.mainWindow.thread_stop_flag == False:
+                if song["bpm"] is None or song["spectral_bandwidth"] is None or song["spectral_contrast"] is None or song["weighted_cosine_similarity"] is None:
+                    print(f"Updating {song['name']}")
+                    features = get_song_features(song["path"])
+                    features_df = pd.DataFrame(features, index=[0])
+                    # 更新歌曲信息
+                    song["spectral_bandwidth"] = features['spectral_bandwidth']
+                    song["spectral_contrast"] = features['spectral_contrast']
+                    song["bpm"] = features['bpm']
+                    # 计算加权余弦相似度
+                    song["wav_entropy"] = features['wav_entropy']
+                    song["wav_std_dev"] = float(features['wav_std_dev'])
+                    song["loudness"] = float(features['loudness'])
+                    song["weighted_cosine_similarity"] = calculate_weighted_cosine_similarity(features_df, self.ranges)
+                    updated_songs.append(song)
+
+                    self.update_loudness_in_other_playlists(song["path"], song["loudness"])
+
+                    with open(cosine_similarity_list_path, 'w', encoding='utf-8') as f:
+                        json.dump(cosine_similarity_list, f, ensure_ascii=False, indent=4)
+                    self.sort_cosine_similarity_list(cosine_similarity_list_path)
+
+    def update_loudness_in_other_playlists(self, song_path, new_loudness):
+        playlists_dir = os.path.join(self.mainWindow.baseDir, 'playlists')
+        playlist_files = [f for f in os.listdir(playlists_dir) if f.endswith('.json')]
+        for playlist_file in playlist_files:
+            playlist_path = os.path.join(playlists_dir, playlist_file)
+            with open(playlist_path, 'r', encoding='utf-8') as f:
+                playlist = json.load(f)
+            for song in playlist:
+                if song["path"] == song_path:
+                    song["loudness"] = new_loudness
+            with open(playlist_path, 'w', encoding='utf-8') as f:
+                json.dump(playlist, f, ensure_ascii=False, indent=4)
+
 
     def record_feature_ranges(self):
         all_features = self.get_all_song_features()
@@ -429,7 +555,6 @@ class MusicPlayer(QWidget):
         
         with open(cosine_similarity_list_path, 'w', encoding='utf-8') as f:
             json.dump(sorted_cosine_similarity_list, f, ensure_ascii=False, indent=4)
-        print(1)
 
     def add_new_playlist(self):
         # 弹出对话框让用户输入新播放列表的文件名
@@ -451,4 +576,35 @@ class MusicPlayer(QWidget):
                 QMessageBox.information(self, "Success", f"Playlist '{playlist_name}' added successfully.")
             except Exception as e:
                 QMessageBox.critical(self, "Error", f"Failed to add playlist: {e}")
+
+    def delete_item(self, list_widget, item):
+        if list_widget == self.playlist_widget:
+            # 处理歌曲删除
+            song_name = item.text()
+            playlists_dir = os.path.join(self.mainWindow.baseDir, 'playlists') # Define playlists_dir here
+            playlist_json_path = os.path.join(playlists_dir, self.current_playlist_filename)
+            with open(playlist_json_path, 'r', encoding='utf-8') as f:
+                playlist_info = json.load(f)
+            playlist_info = [song for song in playlist_info if song["name"] != song_name]
+            with open(playlist_json_path, 'w', encoding='utf-8') as f:
+                json.dump(playlist_info, f, ensure_ascii=False, indent=4)
+            self.playlist_widget.takeItem(self.playlist_widget.row(item))
+            QMessageBox.information(self, "Success", f"Song '{song_name}' has been deleted from the playlist.")
+        elif list_widget == self.playlist_selector:
+            # 处理播放列表删除
+            playlist_name = item.text()
+            playlists_dir = os.path.join(self.mainWindow.baseDir, 'playlists') # Define playlists_dir here
+            playlist_path = os.path.join(playlists_dir, playlist_name)
+            if os.path.exists(playlist_path):
+                os.remove(playlist_path)
+                self.playlist_selector.takeItem(self.playlist_selector.row(item))
+                if self.current_playlist_filename == playlist_name:
+                    self.current_playlist_filename = ""
+                    self.playlist_widget.clear()
+                QMessageBox.information(self, "Success", f"Playlist '{playlist_name}' has been deleted.")
+            else:
+                QMessageBox.warning(self, "Error", f"Playlist '{playlist_name}' does not exist.")
+        else:
+            # 如果不是从playlist_widget或playlist_selector删除，则只删除UI中的项
+            list_widget.takeItem(list_widget.row(item))
 # endregion

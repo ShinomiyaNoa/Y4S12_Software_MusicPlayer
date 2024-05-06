@@ -24,19 +24,19 @@ class TitleBar(QWidget):
         layout.addWidget(self.titleLabel)
 
         # 添加最小化按钮
-        self.minimizeButton = QPushButton(self)
-        self.minimizeButton.setIcon(QIcon("path/to/minimize_icon.png"))
+        self.minimizeButton = QPushButton("🗕", self)
+
         self.minimizeButton.clicked.connect(self.parent().showMinimized)
         layout.addWidget(self.minimizeButton)
 
         # 添加最大化/还原按钮
-        self.maximizeButton = QPushButton(self)
-        self.maximizeButton.setIcon(QIcon("path/to/maximize_icon.png"))
+        self.maximizeButton = QPushButton("🗖", self)
+
         self.maximizeButton.clicked.connect(self.toggleMaximize)
         layout.addWidget(self.maximizeButton)
 
         # 添加关闭按钮
-        self.closeButton = QPushButton(self)
+        self.closeButton = QPushButton("🗙", self)
         self.closeButton.setIcon(QIcon("path/to/close_icon.png"))
         self.closeButton.clicked.connect(self.parent().close)
         layout.addWidget(self.closeButton)
@@ -62,7 +62,7 @@ class TitleBar(QWidget):
     def toggleMaximize(self):
         if self.mainWindow.isMaximized():
             self.mainWindow.showNormal()
-            self.maximizeButton.setIcon(QIcon("path/to/maximize_icon.png"))
+            self.maximizeButton.setText("🗖")
         else:
             self.mainWindow.showMaximized()
-            self.maximizeButton.setIcon(QIcon("path/to/restore_icon.png"))
+            self.maximizeButton.setText("🗗")
