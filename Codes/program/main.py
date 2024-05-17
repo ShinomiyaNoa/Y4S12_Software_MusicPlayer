@@ -38,7 +38,6 @@ class MainWindow(QMainWindow):
 
         layout.setStretchFactor(self.musicPlayer, 1)
 
-        # 在 MainWindow 类的 __init__ 方法中添加以下代码
         with open(os.path.join(self.baseDir, 'main.qss'), "r") as f:
             self.setStyleSheet(f.read())
 

@@ -3,7 +3,7 @@ from PySide6.QtWidgets import QApplication, QSlider, QPushButton, QRadioButton
 from PySide6.QtWidgets import QFileDialog, QHBoxLayout, QMessageBox, QVBoxLayout
 from PySide6.QtWidgets import QButtonGroup, QSplitter, QMenu, QLabel
 from PySide6.QtCore import Qt, QTimer
-from core.AudioCore import AudioPlayer
+from core.AudioCore import AudioCore
 from core.getSongFeature import get_song_features
 from core.cosineSimilarity import calculate_weighted_cosine_similarity
 import pandas as pd
@@ -29,24 +29,24 @@ class MusicPlayer(QWidget):
             'spectral_contrast': (18.5,27.5),
             'bpm': (60,240),
             'wav_entropy': (0.045,0.054),
-            'wav_std_dev': (0.0030,0.61)
+            'wav_std_dev': (9,17.5)
         }
         self.setAutoFillBackground(True)
 
         # 加载 QSS 文件
         self.load_qss("component\\qss\\musicPlayer.qss")
 
-        self.audio_player = AudioPlayer(self)
+        self.audio_player = AudioCore(self)
         self.create_ui()
 
         # 加载播放列表
         self.load_existing_playlists()
         self.load_last_opened_playlist()
 
-        # 播放次数计时器
-        self.play_count_timer = QTimer(self)
-        self.play_count_timer.setInterval(10000)
-        self.play_count_timer.timeout.connect(self.update_play_count)
+        # # 播放次数计时器
+        # self.play_count_timer = QTimer(self)
+        # self.play_count_timer.setInterval(10000)
+        # self.play_count_timer.timeout.connect(self.update_play_count)
 
         # 在播放器打开时扫描并更新 cosine similarity list
         threading.Thread(target=self.scan_and_update_cosine_similarity_list).start()
@@ -249,11 +249,9 @@ class MusicPlayer(QWidget):
             print(f"Song {file_name} not found in playlist.")
             return
         self.audio_player.open_file(file_path, song_info['loudness'])
-        self.audio_player.play_pause()
-        self.toggle_play_pause()
 
-        # 计时器在播放后开始准备计数
-        self.play_count_timer.start()
+        # # 计时器在播放后开始准备计数
+        # self.play_count_timer.start()
 
     def toggle_play_pause(self):
         if self.audio_player.is_playing():
@@ -307,36 +305,36 @@ class MusicPlayer(QWidget):
                         self.play_audio(self.playlist_widget.item(i))
                         break
 
-    def update_play_count(self):
-        # print(f"Play count: {self.play_count_timer.elapsed()}")
-        current_song_info = self.get_current_song_info()
-        if current_song_info:
-            current_song_info["play_count"] += 1
-            self.save_playlist(self.current_playlist_filename, self.get_playlist_info())
+    # def update_play_count(self):
+    #     # print(f"Play count: {self.play_count_timer.elapsed()}")
+    #     current_song_info = self.get_current_song_info()
+    #     if current_song_info:
+    #         current_song_info["play_count"] += 1
+    #         self.save_playlist(self.current_playlist_filename, self.get_playlist_info())
 
-    def get_current_song_info(self):
-        current_song_name = self.playlist_widget.currentItem().text()
-        playlists_dir = os.path.join(self.mainWindow.baseDir, 'playlists')
-        playlist_json_path = os.path.join(playlists_dir, self.current_playlist_filename)
-        with open(playlist_json_path, 'r', encoding='utf-8') as f:
-            playlist_info = json.load(f)
-        for song_info in playlist_info:
-            if song_info["name"] == current_song_name:
-                return song_info
-        return None
+    # def get_current_song_info(self):
+    #     current_song_name = self.playlist_widget.currentItem().text()
+    #     playlists_dir = os.path.join(self.mainWindow.baseDir, 'playlists')
+    #     playlist_json_path = os.path.join(playlists_dir, self.current_playlist_filename)
+    #     with open(playlist_json_path, 'r', encoding='utf-8') as f:
+    #         playlist_info = json.load(f)
+    #     for song_info in playlist_info:
+    #         if song_info["name"] == current_song_name:
+    #             return song_info
+    #     return None
 
-    def get_playlist_info(self):
-        playlists_dir = os.path.join(self.mainWindow.baseDir, 'playlists')
-        playlist_json_path = os.path.join(playlists_dir, self.current_playlist_filename)
-        with open(playlist_json_path, 'r', encoding='utf-8') as f:
-            playlist_info = json.load(f)
-        return playlist_info
+    # def get_playlist_info(self):
+    #     playlists_dir = os.path.join(self.mainWindow.baseDir, 'playlists')
+    #     playlist_json_path = os.path.join(playlists_dir, self.current_playlist_filename)
+    #     with open(playlist_json_path, 'r', encoding='utf-8') as f:
+    #         playlist_info = json.load(f)
+    #     return playlist_info
 
-    def save_playlist(self, filename, playlist_info):
-        playlists_dir = os.path.join(self.mainWindow.baseDir, 'playlists')
-        playlist_json_path = os.path.join(playlists_dir, filename)
-        with open(playlist_json_path, 'w', encoding='utf-8') as f:
-            json.dump(playlist_info, f, ensure_ascii=False, indent=4)
+    # def save_playlist(self, filename, playlist_info):
+    #     playlists_dir = os.path.join(self.mainWindow.baseDir, 'playlists')
+    #     playlist_json_path = os.path.join(playlists_dir, filename)
+    #     with open(playlist_json_path, 'w', encoding='utf-8') as f:
+    #         json.dump(playlist_info, f, ensure_ascii=False, indent=4)
 # endregion
 
 # region Playlists
@@ -407,10 +405,10 @@ class MusicPlayer(QWidget):
         print("Folder processing completed.")
 
         # 在选择文件夹后扫描并更新 cosine similarity list
-        playlists_dir = os.path.join(self.mainWindow.baseDir, 'playlists')
-        cosine_similarity_list_path = os.path.join(playlists_dir, 'cosineSlimilarityList.json')
-        with open(cosine_similarity_list_path, 'r', encoding='utf-8') as f:
-            cosine_similarity_list = json.load(f)
+        # playlists_dir = os.path.join(self.mainWindow.baseDir, 'playlists')
+        # cosine_similarity_list_path = os.path.join(playlists_dir, 'cosineSlimilarityList.json')
+        # with open(cosine_similarity_list_path, 'r', encoding='utf-8') as f:
+        #     cosine_similarity_list = json.load(f)
 
         threading.Thread(target=self.scan_and_update_cosine_similarity_list).start()
 
@@ -420,6 +418,8 @@ class MusicPlayer(QWidget):
             for file_path in file_paths:
                 file_name = os.path.basename(file_path)
                 self.add_to_playlist(file_path, file_name)
+
+        threading.Thread(target=self.scan_and_update_cosine_similarity_list).start()
 
     def add_to_playlist(self, file_path, file_name):
         # current playlist
@@ -505,6 +505,7 @@ class MusicPlayer(QWidget):
                     with open(cosine_similarity_list_path, 'w', encoding='utf-8') as f:
                         json.dump(cosine_similarity_list, f, ensure_ascii=False, indent=4)
                     self.sort_cosine_similarity_list(cosine_similarity_list_path)
+                    self.record_feature_ranges()
 
     def update_loudness_in_other_playlists(self, song_path, new_loudness):
         playlists_dir = os.path.join(self.mainWindow.baseDir, 'playlists')
@@ -523,11 +524,26 @@ class MusicPlayer(QWidget):
     def record_feature_ranges(self):
         all_features = self.get_all_song_features()
         self.ranges = {
-            'spectral_bandwidth': (min(all_features['spectral_bandwidth']), max(all_features['spectral_bandwidth'])),
-            'spectral_contrast': (min(all_features['spectral_contrast']), max(all_features['spectral_contrast'])),
-            'bpm': (min(all_features['bpm']), max(all_features['bpm'])),
-            'wav_entropy': (min(all_features['wav_entropy']), max(all_features['wav_entropy'])),
-            'wav_std_dev': (min(all_features['wav_std_dev']), max(all_features['wav_std_dev']))
+            'spectral_bandwidth': (min(self.ranges['spectral_bandwidth'][0],
+                                       min(all_features['spectral_bandwidth'])), 
+                                       max(self.ranges['spectral_bandwidth'][1],
+                                           max(all_features['spectral_bandwidth']))),
+            'spectral_contrast': (min(self.ranges['spectral_contrast'][0],
+                                      min(all_features['spectral_contrast'])), 
+                                      max(self.ranges['spectral_contrast'][1],
+                                          max(all_features['spectral_contrast']))),
+            'bpm': (min(self.ranges['bpm'][0],
+                         min(all_features['bpm'])), 
+                         max(self.ranges['bpm'][1],
+                             max(all_features['bpm']))),
+            'wav_entropy': (min(self.ranges['wav_entropy'][0],
+                                 min(all_features['wav_entropy'])), 
+                                 max(self.ranges['wav_entropy'][1],
+                                     max(all_features['wav_entropy']))),
+            'wav_std_dev': (min(self.ranges['wav_std_dev'][0],
+                                 min(all_features['wav_std_dev'])), 
+                                 max(self.ranges['wav_std_dev'][1],
+                                     max(all_features['wav_std_dev'])))
         }
 
     def get_all_song_features(self):
@@ -537,8 +553,9 @@ class MusicPlayer(QWidget):
             cosine_similarity_list = json.load(f)
         all_features = []
         for song in cosine_similarity_list:
-            features = get_song_features(song["path"])
-            all_features.append(features)
+            if song["spectral_bandwidth"] is None or song["spectral_contrast"] is None or song["bpm"] is None or song["wav_entropy"] is None or song["wav_std_dev"] is None or song["loudness"] is None or song["weighted_cosine_similarity"] is None:
+                continue
+            all_features.append(song)
         all_features_df = pd.DataFrame(all_features)
         return all_features_df
 
@@ -547,14 +564,22 @@ class MusicPlayer(QWidget):
         with open(cosine_similarity_list_path, 'r', encoding='utf-8') as f:
             cosine_similarity_list = json.load(f)
 
+        # 过滤weighted_cosine_similarity为None
         filtered_list = [item for item in cosine_similarity_list if item['weighted_cosine_similarity'] is not None]
         add_list = [item for item in cosine_similarity_list if item['weighted_cosine_similarity'] is None]
-        
-        sorted_cosine_similarity_list = sorted(filtered_list, key=lambda x: x['weighted_cosine_similarity'], reverse=True)
-        sorted_cosine_similarity_list+=add_list
-        
+
+        # 插排
+        for i in range(1, len(filtered_list)):
+            key = filtered_list[i]
+            j = i - 1
+            while j >= 0 and filtered_list[j]['weighted_cosine_similarity'] < key['weighted_cosine_similarity']:
+                filtered_list[j + 1] = filtered_list[j]
+                j -= 1
+            filtered_list[j + 1] = key
+
+        # 写回文件
         with open(cosine_similarity_list_path, 'w', encoding='utf-8') as f:
-            json.dump(sorted_cosine_similarity_list, f, ensure_ascii=False, indent=4)
+            json.dump(filtered_list+add_list, f, ensure_ascii=False, indent=4)
 
     def add_new_playlist(self):
         # 弹出对话框让用户输入新播放列表的文件名

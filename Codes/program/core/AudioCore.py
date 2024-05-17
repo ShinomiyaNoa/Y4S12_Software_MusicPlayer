@@ -1,21 +1,18 @@
 import vlc
 import numpy as np
-import math
-class AudioPlayer:
+class AudioCore:
 
     def __init__(self, musicPlayer):
-        # Create a basic vlc instance
         self.instance = vlc.Instance()
         self.musicPlayer = musicPlayer
 
         self.media = None
 
-        # Create an empty vlc media player
         self.mediaplayer = self.instance.media_player_new()
 
         self.is_paused = False
 
-        self.target_loudness = -12
+        self.target_loudness = -5
         self.volume_adjustment = 1
 
     def play_pause(self):
@@ -32,8 +29,8 @@ class AudioPlayer:
     def stop(self):
         self.mediaplayer.stop()
 
-    def open_file(self, filename, loudness):
-        self.media = self.instance.media_new(filename)
+    def open_file(self, filepath, loudness):
+        self.media = self.instance.media_new(filepath)
         self.mediaplayer.set_media(self.media)
 
         self.media.parse()
@@ -44,13 +41,6 @@ class AudioPlayer:
         self.play_pause()
 
     def calculate_volume_adjustment(self, current_loudness, target_loudness):
-        """
-        计算响度调整因子。
-        
-        :param current_loudness: 当前音频的响度
-        :param target_loudness: 目标响度
-        :return: 响度调整因子
-        """
         rms_db = 20*np.log10(current_loudness)
         adjustment_factor = np.power(10, (target_loudness - rms_db) / 20)
         return adjustment_factor
