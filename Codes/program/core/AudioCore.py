@@ -12,7 +12,7 @@ class AudioCore:
 
         self.is_paused = False
 
-        self.target_loudness = -5
+        self.target_loudness = -12
         self.volume_adjustment = 1
 
     def play_pause(self):

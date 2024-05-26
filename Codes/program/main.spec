@@ -5,7 +5,7 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[('D:\\Code\\Y4S12Software\\Codes\\program\\component\\qss', 'qss'), ('D:\\Code\\Y4S12Software\\Codes\\program\\playlists', 'playlists')],
+    datas=[('D:\\Code\\Y4S12Software\\Codes\\program', 'main.qss'), ('D:\\Code\\Y4S12Software\\Codes\\program\\component', 'component'), ('D:\\Code\\Y4S12Software\\Codes\\program\\playlists', 'playlists')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

@@ -89,29 +89,29 @@ class MusicPlayer(QWidget):
 
 # region Interface creation
     def create_style_switch_button(self):
-        self.style_switch_button = QPushButton("Switch Style", self)
+        self.style_switch_button = QPushButton("切换样式", self)
         self.style_switch_button.clicked.connect(self.switch_style)
         self.headline_box.addWidget(self.style_switch_button) 
 
     def create_control_buttons(self):
-        self.play_button = QPushButton("Play", self)
+        self.play_button = QPushButton("播放", self)
         self.play_button.clicked.connect(self.toggle_play_pause)
         self.control_box.addWidget(self.play_button)
 
-        self.stop_button = QPushButton("Stop")
+        self.stop_button = QPushButton("停止")
         self.control_box.addWidget(self.stop_button)
         self.stop_button.clicked.connect(self.audio_player.stop)
 
     def create_playback_control_buttons(self):
-        self.previous_button = QPushButton("Previous", self)
+        self.previous_button = QPushButton("上一首", self)
         self.previous_button.clicked.connect(self.play_previous)
         self.control_box.addWidget(self.previous_button)
 
-        self.next_button = QPushButton("Next", self)
+        self.next_button = QPushButton("下一首", self)
         self.next_button.clicked.connect(self.play_next)
         self.control_box.addWidget(self.next_button)
 
-        self.playback_mode_button = QPushButton("Sequential", self)
+        self.playback_mode_button = QPushButton("顺序播放", self)
         self.playback_mode_button.clicked.connect(self.toggle_playback_mode)
         self.control_box.addWidget(self.playback_mode_button)
 
@@ -120,26 +120,26 @@ class MusicPlayer(QWidget):
         self.volumeslider = QSlider(Qt.Orientation.Horizontal, self)
         self.volumeslider.setMaximum(100)
         self.volumeslider.setValue(self.audio_player.get_volume())
-        self.volumeslider.setToolTip("Volume")
+        self.volumeslider.setToolTip("音量")
         self.control_box.addWidget(self.volumeslider)
         self.volumeslider.valueChanged.connect(self.audio_player.set_volume)
 
     def create_position_slider(self):
         self.positionslider = QSlider(Qt.Orientation.Horizontal, self)
-        self.positionslider.setToolTip("Position")
+        self.positionslider.setToolTip("进度条")
         self.positionslider.setMaximum(1000)
         self.positionslider.setValue(self.audio_player.get_position())
         self.positionslider.sliderMoved.connect(self.audio_player.set_position)
         self.control_box.addWidget(self.positionslider)
 
     def create_add_playlist_button(self):
-        self.add_playlist_button = QPushButton("New Playlist", self)
+        self.add_playlist_button = QPushButton("新播放列表", self)
         self.add_playlist_button.clicked.connect(self.add_new_playlist)
         self.headline_box.addWidget(self.add_playlist_button)
         self.headline_box.addStretch(1)
 
     def create_equalizer_settings_button(self):
-        equalizerSettingsButton = QPushButton("Equalizer Settings", self)
+        equalizerSettingsButton = QPushButton("均衡器设置", self)
         equalizerSettingsButton.clicked.connect(self.open_equalizer_settings_dialog)
 
     def create_playlist_widget(self):
@@ -157,12 +157,12 @@ class MusicPlayer(QWidget):
         self.playlist_selector.customContextMenuRequested.connect(self.show_context_menu)
 
     def create_add_file_button(self):
-        self.add_files_button = QPushButton("Add File")
+        self.add_files_button = QPushButton("添加文件")
         self.headline_box.addWidget(self.add_files_button)
         self.add_files_button.clicked.connect(self.select_file)
 
     def create_add_folder_button(self):
-        self.add_folder_button = QPushButton("Add Folder")
+        self.add_folder_button = QPushButton("添加文件夹")
         self.headline_box.addWidget(self.add_folder_button)
         self.add_folder_button.clicked.connect(self.select_folder)
 
@@ -204,7 +204,7 @@ class MusicPlayer(QWidget):
 
     def switch_style(self):
         styles = ["musicPlayer", "brown", "black", "green", "white"] # List of available styles
-        style, ok = QInputDialog.getItem(self, "Select Style", "Style:", styles, 0, False)
+        style, ok = QInputDialog.getItem(self, "选择样式", "样式文件：", styles, 0, False)
         if ok and style:
             qss_path = os.path.join(self.mainWindow.baseDir, f"component\\qss\\{style}.qss")
             with open(qss_path, "r") as f:
@@ -256,18 +256,18 @@ class MusicPlayer(QWidget):
     def toggle_play_pause(self):
         if self.audio_player.is_playing():
             self.audio_player.play_pause()
-            self.play_button.setText("Play")
+            self.play_button.setText("播放")
         else:
             self.audio_player.play_pause()
-            self.play_button.setText("Pause")
+            self.play_button.setText("暂停")
 
-    def toggle_playback_mode(self):
+    def toggle_playback_mode(self): 
         if self.playback_mode == 'sequential':
             self.playback_mode = 'random'
-            self.playback_mode_button.setText("Random")
+            self.playback_mode_button.setText("随机播放")
         else:
             self.playback_mode = 'sequential'
-            self.playback_mode_button.setText("Sequential")
+            self.playback_mode_button.setText("顺序播放")
 
     def play_next(self):
         if self.playback_mode =='sequential':
@@ -457,6 +457,7 @@ class MusicPlayer(QWidget):
 
         for song in cosine_similarity_list:
             if song["path"] == file_path:
+                print(f"File {file_name} is already in the playlist.")
                 return
 
         cosine_similarity_list.append({
@@ -569,13 +570,15 @@ class MusicPlayer(QWidget):
         add_list = [item for item in cosine_similarity_list if item['weighted_cosine_similarity'] is None]
 
         # 插排
-        for i in range(1, len(filtered_list)):
-            key = filtered_list[i]
-            j = i - 1
-            while j >= 0 and filtered_list[j]['weighted_cosine_similarity'] < key['weighted_cosine_similarity']:
-                filtered_list[j + 1] = filtered_list[j]
-                j -= 1
-            filtered_list[j + 1] = key
+        i = len(filtered_list)
+        if i == 1:
+            return
+        key = filtered_list[i]
+        j = i - 1
+        while j >= 0 and filtered_list[j]['weighted_cosine_similarity'] < key['weighted_cosine_similarity']:
+            filtered_list[j + 1] = filtered_list[j]
+            j -= 1
+        filtered_list[j + 1] = key
 
         # 写回文件
         with open(cosine_similarity_list_path, 'w', encoding='utf-8') as f:

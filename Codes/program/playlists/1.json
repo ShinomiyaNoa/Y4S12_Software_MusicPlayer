@@ -1,5 +1,17 @@
 [
     {
+        "name": "#1f1e33 (Another long ''''#ant1p01e'''' version) - - 1.''''#ant1p01e'''' version(Av976702292,P1).mp3",
+        "path": "D:/Music/MusicCollection1\\#1f1e33 (Another long ''''#ant1p01e'''' version) - - 1.''''#ant1p01e'''' version(Av976702292,P1).mp3",
+        "spectral_bandwidth": null,
+        "spectral_contrast": null,
+        "bpm": null,
+        "wav_entropy": null,
+        "wav_std_dev": null,
+        "loudness": 0.2140747457742691,
+        "play_count": 0,
+        "weighted_cosine_similarity": null
+    },
+    {
         "name": "01 ｉｎ　ｆａｃｔ.wav",
         "path": "D:/Music/MusicCollection1\\01 ｉｎ　ｆａｃｔ.wav",
         "spectral_bandwidth": null,
@@ -175,7 +187,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.7348073124885559,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -187,7 +199,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.7662224769592285,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -199,7 +211,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3569015860557556,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -211,7 +223,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.2634270191192627,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -223,7 +235,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.562910795211792,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -235,7 +247,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.6828196048736572,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -247,7 +259,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5606828331947327,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -259,7 +271,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.7366636395454407,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -271,7 +283,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.6595646739006042,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -283,7 +295,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.7194833755493164,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -295,7 +307,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.7055680751800537,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -307,7 +319,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.7206096649169922,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -319,7 +331,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5238654017448425,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -331,7 +343,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.49001866579055786,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -343,7 +355,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5060091614723206,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -355,7 +367,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.7507314682006836,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -367,7 +379,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4728052318096161,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -379,7 +391,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.647284209728241,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -391,7 +403,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.6159989833831787,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -403,7 +415,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5348249673843384,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -415,7 +427,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.7013535499572754,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -427,7 +439,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5294683575630188,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -439,7 +451,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.37812209129333496,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -451,7 +463,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.36823001503944397,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -463,7 +475,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4117116630077362,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -475,7 +487,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3496963083744049,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -487,7 +499,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5250340700149536,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -499,7 +511,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.6071001887321472,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -511,7 +523,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.7122039198875427,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -523,7 +535,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.6532909274101257,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -535,7 +547,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.6630524396896362,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -547,7 +559,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.6873412132263184,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -559,7 +571,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4415888488292694,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -571,7 +583,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5505568385124207,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -583,7 +595,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.48708340525627136,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -595,7 +607,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4614684581756592,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -607,7 +619,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5013762712478638,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -619,7 +631,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.6898320317268372,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -631,7 +643,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4386308491230011,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -643,7 +655,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.47041788697242737,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -655,7 +667,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4382140040397644,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -667,7 +679,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.39651358127593994,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -679,7 +691,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5269328355789185,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -691,7 +703,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4814477562904358,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -703,7 +715,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.2868844270706177,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -715,7 +727,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.39233216643333435,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -727,7 +739,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5947726964950562,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -739,7 +751,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.30747854709625244,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -751,7 +763,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.29001709818840027,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -763,7 +775,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3169185221195221,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -775,7 +787,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4987977147102356,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -787,7 +799,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.309614896774292,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -799,7 +811,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.6864900588989258,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -811,7 +823,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3246364891529083,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -823,7 +835,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3960954248905182,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -835,7 +847,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4118349254131317,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -847,7 +859,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.2860940992832184,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -859,7 +871,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.2651478052139282,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -871,7 +883,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.45687398314476013,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -883,7 +895,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.45223042368888855,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -895,7 +907,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4894539415836334,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -907,7 +919,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.6081755757331848,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -919,7 +931,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.572856605052948,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -931,7 +943,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5146927237510681,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -943,7 +955,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5816495418548584,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -955,7 +967,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5972961783409119,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -967,7 +979,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5156095623970032,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -979,7 +991,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.6769257187843323,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -991,7 +1003,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.39514946937561035,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1003,7 +1015,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4713212251663208,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1015,7 +1027,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.440092533826828,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1027,7 +1039,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5613725185394287,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1039,7 +1051,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.6138558983802795,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1051,7 +1063,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.10073205828666687,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1063,7 +1075,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.581371009349823,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1075,7 +1087,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.6837742328643799,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1087,7 +1099,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.626049816608429,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1099,7 +1111,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5695033073425293,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1111,7 +1123,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4840085804462433,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1123,7 +1135,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5138599872589111,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1135,7 +1147,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5259725451469421,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1147,7 +1159,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4678434431552887,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1159,7 +1171,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4683292508125305,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1171,7 +1183,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4960483908653259,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1183,7 +1195,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4109913408756256,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1195,7 +1207,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3182053565979004,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1207,7 +1219,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4468068778514862,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1219,7 +1231,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.30197980999946594,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1231,7 +1243,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.33250892162323,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1243,7 +1255,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.40521493554115295,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1255,7 +1267,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3124178647994995,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1267,7 +1279,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.44064587354660034,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1279,7 +1291,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4283275306224823,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1291,7 +1303,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.36317121982574463,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1303,7 +1315,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5746693015098572,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1315,7 +1327,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5177943110466003,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1327,7 +1339,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4287255108356476,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1339,7 +1351,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.370345801115036,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1351,7 +1363,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4446219503879547,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1363,7 +1375,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.35307806730270386,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1375,7 +1387,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.2533395290374756,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1387,7 +1399,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5510468482971191,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1399,7 +1411,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5796893239021301,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1411,7 +1423,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5723972916603088,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1423,7 +1435,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5618894100189209,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1435,7 +1447,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.548394501209259,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1447,7 +1459,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.44745364785194397,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1459,7 +1471,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.47312644124031067,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1471,7 +1483,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3517741858959198,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1483,7 +1495,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.16358323395252228,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1495,7 +1507,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4577142000198364,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1507,7 +1519,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4051584005355835,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1519,7 +1531,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4566154479980469,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1531,7 +1543,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4090961813926697,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1543,7 +1555,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4107464551925659,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1555,7 +1567,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.6294277310371399,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1567,7 +1579,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.39066997170448303,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1579,7 +1591,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4969586133956909,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1591,7 +1603,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3832179605960846,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1603,7 +1615,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.41652312874794006,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1615,7 +1627,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.45629459619522095,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1627,7 +1639,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3049164116382599,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1639,7 +1651,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4900394380092621,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1651,7 +1663,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3528293967247009,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1663,7 +1675,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4198288321495056,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1675,7 +1687,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3694050908088684,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1687,7 +1699,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.39855948090553284,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1699,7 +1711,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.37471386790275574,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1711,7 +1723,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.42070403695106506,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1723,7 +1735,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.45415276288986206,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1735,7 +1747,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3740103542804718,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1747,7 +1759,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.43826332688331604,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1759,7 +1771,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5008882880210876,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1771,7 +1783,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4133046567440033,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1783,7 +1795,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.49189603328704834,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1795,7 +1807,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.24153877794742584,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1807,7 +1819,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.35825735330581665,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1819,7 +1831,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4697584807872772,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1831,7 +1843,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.33468666672706604,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1843,7 +1855,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.46149468421936035,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1855,7 +1867,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4446835219860077,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1867,7 +1879,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.44775140285491943,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1879,7 +1891,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.39107751846313477,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1891,7 +1903,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4806060492992401,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1903,7 +1915,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.43905797600746155,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1915,7 +1927,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.43476244807243347,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1927,7 +1939,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.41984641551971436,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1939,7 +1951,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.32672929763793945,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1951,7 +1963,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4809199571609497,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1963,7 +1975,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.39486998319625854,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1975,7 +1987,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4678441882133484,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1987,7 +1999,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.6373301148414612,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -1999,7 +2011,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3552749454975128,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2011,7 +2023,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.44652408361434937,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2023,7 +2035,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.30722832679748535,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2035,7 +2047,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4077923893928528,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2047,7 +2059,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4020991623401642,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2059,7 +2071,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3698466718196869,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2071,7 +2083,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.29846706986427307,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2083,7 +2095,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3310706913471222,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2095,7 +2107,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.32164299488067627,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2107,7 +2119,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.22028660774230957,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2119,7 +2131,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.39682552218437195,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2131,7 +2143,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4406704306602478,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2143,7 +2155,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.35504406690597534,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2155,7 +2167,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3995463252067566,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2167,7 +2179,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.6360131502151489,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2179,7 +2191,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.37098824977874756,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2191,7 +2203,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5414729714393616,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2203,7 +2215,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.19433680176734924,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2215,7 +2227,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4622844457626343,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2227,7 +2239,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.43101292848587036,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2239,7 +2251,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4685981571674347,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2251,7 +2263,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.48356685042381287,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2263,7 +2275,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.499065637588501,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2275,7 +2287,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.48569363355636597,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2287,7 +2299,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3810623586177826,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2299,7 +2311,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5744032859802246,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2311,7 +2323,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5342589020729065,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2323,7 +2335,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4121677279472351,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2335,7 +2347,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.37792444229125977,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2347,7 +2359,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3858819603919983,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2359,7 +2371,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.544702410697937,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2371,7 +2383,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.422067254781723,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2383,7 +2395,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.34849604964256287,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2395,7 +2407,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4283737242221832,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2407,7 +2419,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.2225033938884735,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2419,7 +2431,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4792369604110718,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2431,7 +2443,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.38748061656951904,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2443,7 +2455,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.45481792092323303,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2455,7 +2467,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4406754970550537,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2467,7 +2479,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4907490015029907,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2479,7 +2491,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.47090575098991394,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2491,7 +2503,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.42213714122772217,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2503,7 +2515,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.25897905230522156,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2515,7 +2527,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3930233418941498,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2527,7 +2539,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.418084979057312,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2539,7 +2551,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4542357623577118,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2551,7 +2563,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.47983238101005554,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2563,7 +2575,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5946742296218872,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2575,7 +2587,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.416088730096817,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2587,7 +2599,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5294896364212036,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2599,7 +2611,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.36272233724594116,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2611,7 +2623,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5146117806434631,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2623,7 +2635,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.24118252098560333,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2635,7 +2647,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5023715496063232,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2647,7 +2659,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.49425938725471497,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2659,7 +2671,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4919958710670471,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2671,7 +2683,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5160050988197327,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2683,7 +2695,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3431923985481262,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2695,7 +2707,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.45440879464149475,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2707,7 +2719,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5187905430793762,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2719,7 +2731,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5114050507545471,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2731,7 +2743,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.3272927701473236,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2743,7 +2755,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.48605579137802124,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2755,7 +2767,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.600091278553009,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2767,7 +2779,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5658828616142273,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2779,7 +2791,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5228254795074463,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2791,7 +2803,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.550202488899231,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2803,7 +2815,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5858652591705322,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2815,7 +2827,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.7013193368911743,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2827,7 +2839,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.568183183670044,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2839,7 +2851,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5486176013946533,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2851,7 +2863,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5711312294006348,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2863,7 +2875,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.4460248649120331,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2875,7 +2887,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.5267899036407471,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2887,7 +2899,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.51129549741745,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2899,7 +2911,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.38329431414604187,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2911,7 +2923,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.48499539494514465,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2923,7 +2935,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.7017107605934143,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2935,7 +2947,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.7188771367073059,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2947,7 +2959,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.7369101047515869,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2959,7 +2971,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.7606604099273682,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2971,7 +2983,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.7620893120765686,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2983,7 +2995,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.712622344493866,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -2995,7 +3007,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.8210450410842896,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -3007,7 +3019,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.7809050679206848,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -3019,7 +3031,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.8886005282402039,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -3031,7 +3043,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.7453981637954712,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -3043,7 +3055,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.7888790965080261,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     },
@@ -3055,7 +3067,7 @@
         "bpm": null,
         "wav_entropy": null,
         "wav_std_dev": null,
-        "loudness": 0.7624316811561584,
+        "loudness": null,
         "play_count": 0,
         "weighted_cosine_similarity": null
     }
